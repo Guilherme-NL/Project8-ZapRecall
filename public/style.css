@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fb6b6b;
+}
+
+.root {
+  font-family: "Recursive", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.welcomeContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.welcome {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.welcome img {
+  width: 136px;
+  height: 161px;
+}
+
+.welcome h1 {
+  font-size: 36px;
+  font-family: "Righteous", cursive;
+  color: #ffffff;
+}
+
+.welcome button {
+  width: 246px;
+  height: 54px;
+  background-color: #ffffff;
+  border: 1px solid #d70900;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+
+  font-size: 18px;
+  color: #d70900;
+  font-family: "Recursive";
+}
