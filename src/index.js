@@ -10,7 +10,7 @@ export default function App() {
   return (
     <>
       {window === "welcome" ? (
-        <WelcomeWindow setWindow={setWindow} />
+        <WelcomeWindow onWindowChange={setWindow} />
       ) : (
         <FlashcardsWindow />
       )}

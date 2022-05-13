@@ -53,3 +53,117 @@ body {
   color: #d70900;
   font-family: "Recursive";
 }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topLogo {
+  margin: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.topLogo img {
+  width: 52px;
+  height: 60px;
+}
+
+.topLogo span {
+  font-size: 36px;
+  color: #ffffff;
+  font-family: "Righteous", cursive;
+}
+
+.question-step1 {
+  margin: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 65px;
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.question-step1 h2 {
+  color: #333333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.question-step1 img {
+  width: 20px;
+  height: 23px;
+}
+
+.question-step2,
+.question-step3 {
+  margin: 37px;
+  height: 131px;
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  position: relative;
+}
+
+.question-step2 p,
+.question-step3 p {
+  font-size: 18px;
+  color: #333333;
+}
+
+.question-step2 img {
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+.questions {
+  margin-bottom: 100px;
+}
+
+.answers {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 5%;
+}
+
+.answers > div {
+  width: 85px;
+  height: 37px;
+  font-size: 12px;
+  color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.not {
+  background-color: #ff3030;
+}
+
+.maybe {
+  background-color: #ff922e;
+}
+
+.yes {
+  background-color: #2fbe34;
+}
