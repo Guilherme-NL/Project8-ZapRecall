@@ -102,11 +102,6 @@ body {
   font-weight: bold;
 }
 
-.question-step1 img {
-  width: 20px;
-  height: 23px;
-}
-
 .question-step2,
 .question-step3 {
   margin: 37px;
@@ -166,4 +161,38 @@ body {
 
 .yes {
   background-color: #2fbe34;
+}
+
+.right h2 {
+  text-decoration-line: line-through;
+  color: #2fbe34;
+}
+
+.doubt h2 {
+  text-decoration-line: line-through;
+  color: #ff922e;
+}
+
+.wrong h2 {
+  text-decoration-line: line-through;
+  color: #ff3030;
+}
+
+.close-circle {
+  color: #ff3030;
+  font-size: 29px;
+}
+
+.help-circle {
+  color: #ff922e;
+  font-size: 29px;
+}
+
+.checkmark-circle {
+  color: #2fbe34;
+  font-size: 29px;
+}
+
+.play-outline {
+  font-size: 29px;
 }

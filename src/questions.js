@@ -1,23 +1,26 @@
-import vector from "./images/Vector.png";
 import setinha from "./images/setinha.png";
 import React from "react";
 
 export default function QuestionsWindow({ defaultQuestions }) {
   const [questions, setQuestions] = React.useState(defaultQuestions);
 
-  function handleShowQuestion(question) {
+  function handleShowQuestion(question, status, icon) {
     const updatedQuestions = [...questions];
 
     const index = updatedQuestions.indexOf(question);
     updatedQuestions[index] = {
       ...updatedQuestions[index],
       step: updatedQuestions[index].step + 1,
+      status,
+      icon,
     };
 
     if (updatedQuestions[index].step === 4) {
       updatedQuestions[index] = {
         ...updatedQuestions[index],
         step: 1,
+        status,
+        icon,
       };
     }
     setQuestions(updatedQuestions);
@@ -36,13 +39,19 @@ function Questions({ questions, onShowQuestion }) {
       {questions.map((question) => {
         if (question.step === 1) {
           return (
-            <div className="question-step1" key={question.name}>
+            <div
+              className={"question-step1 " + question.status}
+              key={question.name}
+            >
               <h2>{question.name}</h2>
-              <img
-                onClick={() => onShowQuestion(question)}
-                src={vector}
-                alt="vector"
-              />
+              <div className={question.icon}>
+                <ion-icon
+                  onClick={() =>
+                    onShowQuestion(question, "init", "play-outline")
+                  }
+                  name={question.icon}
+                ></ion-icon>
+              </div>
             </div>
           );
         }
@@ -51,7 +60,7 @@ function Questions({ questions, onShowQuestion }) {
             <div className="question-step2" key={question.name}>
               <p>{question.question}</p>
               <img
-                onClick={() => onShowQuestion(question)}
+                onClick={() => onShowQuestion(question, "init", "play-outline")}
                 src={setinha}
                 alt="setinha"
               />
@@ -63,13 +72,28 @@ function Questions({ questions, onShowQuestion }) {
             <div className="question-step3" key={question.name}>
               <p>{question.answer}</p>
               <div className="answers">
-                <div className="not" onClick={() => onShowQuestion(question)}>
+                <div
+                  className="not"
+                  onClick={() =>
+                    onShowQuestion(question, "wrong", "close-circle")
+                  }
+                >
                   Não lembrei
                 </div>
-                <div className="maybe" onClick={() => onShowQuestion(question)}>
+                <div
+                  className="maybe"
+                  onClick={() =>
+                    onShowQuestion(question, "doubt", "help-circle")
+                  }
+                >
                   Quase não lembrei
                 </div>
-                <div className="yes" onClick={() => onShowQuestion(question)}>
+                <div
+                  className="yes"
+                  onClick={() =>
+                    onShowQuestion(question, "right", "checkmark-circle")
+                  }
+                >
                   Zap!
                 </div>
               </div>
