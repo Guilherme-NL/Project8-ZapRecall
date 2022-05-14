@@ -1,9 +1,7 @@
 import setinha from "./images/setinha.png";
 import React from "react";
 
-export default function QuestionsWindow({ defaultQuestions }) {
-  const [questions, setQuestions] = React.useState(defaultQuestions);
-
+export default function QuestionsWindow({ questions, setQuestions }) {
   function handleShowQuestion(question, status, icon) {
     const updatedQuestions = [...questions];
 

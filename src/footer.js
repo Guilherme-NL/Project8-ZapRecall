@@ -1,11 +1,11 @@
-export default function Footer({ defaultQuestions }) {
-  const answerQuestions = defaultQuestions.filter(
+export default function Footer({ questions }) {
+  const answerQuestions = questions.filter(
     (question) => question.status !== "init"
   );
   console.log(answerQuestions);
   return (
     <div className="footer">
-      {answerQuestions.length}/{defaultQuestions.length} CONCLUÍDOS
+      {answerQuestions.length}/{questions.length} CONCLUÍDOS
     </div>
   );
 }

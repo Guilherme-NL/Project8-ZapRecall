@@ -1,6 +1,7 @@
 import Footer from "./footer";
 import TopLogo from "./toplogo";
 import QuestionsWindow from "./questions";
+import React from "react";
 
 const questions = [
   {
@@ -73,11 +74,13 @@ function random() {
 }
 
 export default function FlashcardsWindow() {
+  const [questions, setQuestions] = React.useState(questionsIndex);
+
   return (
     <>
       <TopLogo />
-      <QuestionsWindow defaultQuestions={questionsIndex} />
-      <Footer defaultQuestions={questionsIndex} />
+      <QuestionsWindow questions={questions} setQuestions={setQuestions} />
+      <Footer questions={questions} setQuestions={setQuestions} />
     </>
   );
 }
