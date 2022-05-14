@@ -2,6 +2,8 @@ import Footer from "./footer";
 import TopLogo from "./toplogo";
 import QuestionsWindow from "./questions";
 import React from "react";
+import sad from "./images/sad.png";
+import party from "./images/party.png";
 
 const questions = [
   {
@@ -75,12 +77,49 @@ function random() {
 
 export default function FlashcardsWindow() {
   const [questions, setQuestions] = React.useState(questionsIndex);
+  const answerQuestions = questions.filter(
+    (question) => question.status !== "init"
+  );
+  console.log(answerQuestions);
+
+  function renderElement() {
+    if (answerQuestions.length === questions.length) {
+      if (answerQuestions.some((question) => question.status === "wrong")) {
+        return (
+          <div className="response">
+            <div className="title">
+              <img src={sad} alt="sad" />
+              <span>Putz...</span>
+            </div>
+
+            <p>Ainda faltam alguns... Mas não desanime!</p>
+          </div>
+        );
+      } else {
+        return (
+          <div className="response">
+            <div className="title">
+              <img src={party} alt="party" />
+              <span>Parabéns</span>
+            </div>
+
+            <p>Você não esqueceu de nenhuma flashcard!</p>
+          </div>
+        );
+      }
+    }
+  }
 
   return (
     <>
       <TopLogo />
       <QuestionsWindow questions={questions} setQuestions={setQuestions} />
-      <Footer questions={questions} setQuestions={setQuestions} />
+      <Footer
+        questions={questions}
+        answerQuestions={answerQuestions}
+        setQuestions={setQuestions}
+        renderElement={renderElement()}
+      />
     </>
   );
 }
